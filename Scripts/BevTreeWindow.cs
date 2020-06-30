@@ -1,5 +1,4 @@
-﻿#define ACT91
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;

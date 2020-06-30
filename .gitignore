@@ -27,3 +27,4 @@ build/*
 
 **/*.meta
 **/Extensions/
+**/Proto/Generated/
