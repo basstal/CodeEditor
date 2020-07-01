@@ -171,7 +171,7 @@ namespace CodeEditor
             var insertMethod = type.GetMethod("Insert");
             insertMethod?.Invoke(field, new[]{index, value});
         }
-        private static Dictionary<string, Type> m_messageTypes;
+        public static Dictionary<string, Type> MessageTypes;
 
         public static MessageDescriptor GetDescriptor(Type type)
         {
@@ -187,24 +187,25 @@ namespace CodeEditor
         }
         public static IMessage CreateIMessage(string typename)
         {
-            if (m_messageTypes == null)
+            if (MessageTypes == null)
             {
-                m_messageTypes = new Dictionary<string, Type>();
+                MessageTypes = new Dictionary<string, Type>();
                 var baseType = typeof(IMessage);
-                foreach (var messageType in Assembly.GetExecutingAssembly().GetTypes())
+                var assembly = Assembly.Load("Assembly-CSharp");
+                foreach (var messageType in assembly.GetTypes())
                 {
                     if (baseType.IsAssignableFrom(messageType))
                     {
                         var descriptor = GetDescriptor(messageType);
                         if (descriptor != null)
                         {
-                            m_messageTypes.Add(descriptor.FullName, messageType);
+                            MessageTypes.Add(descriptor.FullName, messageType);
                         }
                     }
                 }
             }
 
-            m_messageTypes.TryGetValue(typename, out var type);        
+            MessageTypes.TryGetValue(typename, out var type);        
 
             return type != null ? Activator.CreateInstance(type) as IMessage : null;
         }

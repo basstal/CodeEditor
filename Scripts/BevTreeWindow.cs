@@ -70,8 +70,8 @@ namespace CodeEditor
 
         private void OnFocus()
         {
-            m_fileList = null;
-            ListReload(m_bevTreeView?.name);
+            Utility.MessageTypes = null;
+            ListReload(m_bevTreeView?.name, true);
         }
 
         private void OnEnable()
