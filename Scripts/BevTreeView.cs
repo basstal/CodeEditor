@@ -26,6 +26,10 @@ namespace CodeEditor
             this.name = name;
             this.changed = false;
             m_window = EditorWindow.GetWindow<BevTreeWindow>();
+            if (m_window.savedCopyItems != null)
+            {
+                copyItems = m_window.savedCopyItems;
+            }
         }
 
         public BevTreeView(TreeViewState state, MultiColumnHeader multiColumnHeader) : base(state, multiColumnHeader)
@@ -106,6 +110,12 @@ namespace CodeEditor
             }
 
             return result;
+        }
+
+        public override void Copy()
+        {
+            base.Copy();
+            m_window.savedCopyItems = copyItems;
         }
 
         protected override void ContextClickedItem(int id)

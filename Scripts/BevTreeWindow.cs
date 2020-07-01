@@ -47,6 +47,7 @@ namespace CodeEditor
         {
             get => m_explanations;
         }
+        public List<CodeEditorTreeViewItem> savedCopyItems { get; set; }
         public BevTreeView bevTreeView { get => m_bevTreeView; }
         public JToken bevTreeProperties { get => m_bevTreeProperties; }
         public bool isBevTreeDisplayDebugId

@@ -29,6 +29,7 @@ namespace CodeEditor
         public List<CodeEditorTreeViewItem> copyItems
         {
             get => m_copyItems;
+            set => m_copyItems = value;
         }
 
         public CodeEditorTreeViewItem drawItem
