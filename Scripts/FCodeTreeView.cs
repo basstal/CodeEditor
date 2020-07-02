@@ -115,7 +115,7 @@ namespace CodeEditor
                 return (c.fcodeNodeType == FCodeNodeType.Command || c.fcodeNodeType == FCodeNodeType.Condition || c.fcodeNodeType == FCodeNodeType.Vars) && c.displayName == word;
             });
             logicItem = logicItem ?? (c1 != null ? (FCodeTreeViewItem)c1 : null);
-            if (logicItem != null)
+            if (logicItem != null && logicItem.children?.Count > 0)
             {
                 sb.AppendLine($"\t\t{word} = function()");
                 if (logicItem.fcodeNodeType == FCodeNodeType.Vars)
