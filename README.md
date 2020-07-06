@@ -6,7 +6,7 @@
 
 ## **提供对Lua逻辑代码的节点编辑。**
 
-![fcode](Editor\Documentation~\README\fcode.png "fcode")
+![fcode](Editor/Documentation~/README/fcode.png "fcode")
 
 ## 使用说明
 
