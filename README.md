@@ -2,11 +2,11 @@
 
 ## **提供对Lua行为树的节点编辑。**
 
-![bevTree](Editor/Documentation~/README/bevTree.png "bevTree")
+![bevTree](Documentation~/README/bevTree.png "bevTree")
 
 ## **提供对Lua逻辑代码的节点编辑。**
 
-![fcode](Editor/Documentation~/README/fcode.png "fcode")
+![fcode](Documentation~/README/fcode.png "fcode")
 
 ## 使用说明
 
