@@ -24,6 +24,4 @@ build/*
 *.pyc
 /Logs
 
-**/*.meta
-**/Extensions/
 **/Proto/Generated/

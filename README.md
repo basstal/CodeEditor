@@ -12,7 +12,7 @@
 
 1. 用Unity的PackageManager将package.json导入
 
-2. 在Proto/Tools文件夹下执行protobuf.py的python脚本，执行完成后会在Proto文件夹下多出一个Generated文件夹，其中包含有BevTree.proto和FCode.proto中的定义。【注意：Tools/bin/下包含有macOS和win的protoc，其他平台需要提供对应的protoc后再使用，而且目前来说没有听过Liunx的Unity编辑器支持，所以对于编辑器应该是够用了的】
+2. 在Proto/Tools文件夹下执行protobuf.py的python脚本【没有python的话，请安装一个】，执行完成后会在Proto文件夹下多出一个Generated文件夹，其中包含有BevTree.proto和FCode.proto中的定义。【注意：Tools/bin/下包含有macOS和win的protoc，其他平台需要提供对应的protoc后再使用，而且目前来说没有听过Liunx的Unity编辑器支持，所以对于编辑器应该是够用了的】
 
 3. 修改BevTreeProperty.json中的ConditionsDir、ActionsDir、AIDir、AISnippetDir为适合自己工程的路径。
 
