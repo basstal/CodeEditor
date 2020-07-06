@@ -8,7 +8,7 @@
 
 ![fcode](Documentation~/README/fcode.png "fcode")
 
-## 使用说明
+## 简易说明
 
 1. 用Unity的PackageManager将package.json导入
 
