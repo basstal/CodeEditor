@@ -51,6 +51,7 @@ namespace CodeEditor
         static void ShowWindow()
         {
             instance = GetWindow<FCodeWindow>("FCode编辑器", typeof(SceneView));
+            instance.Show();
             instance.Focus();
         }
 

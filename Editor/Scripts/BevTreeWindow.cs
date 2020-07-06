@@ -66,6 +66,7 @@ namespace CodeEditor
         public static void ShowWindow()
         {
             instance = GetWindow<BevTreeWindow>("BevTree编辑器", typeof(SceneView));
+            instance.Show();
             instance.Focus();
         }
 

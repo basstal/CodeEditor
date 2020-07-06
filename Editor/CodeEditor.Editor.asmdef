@@ -6,12 +6,13 @@
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
+    "overrideReferences": false,
     "precompiledReferences": [
         "Google.Protobuf.dll",
         "Newtonsoft.Json.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
+    "versionDefines": [],
     "noEngineReferences": false
 }
