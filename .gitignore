@@ -16,7 +16,6 @@
 *.app
 *.VC.*
 .DS_Store
-*~
 *.swp
 
 .vs/

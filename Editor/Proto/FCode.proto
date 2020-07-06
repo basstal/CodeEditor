@@ -1,0 +1,77 @@
+syntax = "proto3";
+package CodeEditor;
+
+enum FCodeNodeType {
+    FCodeNodeType_None = 0;
+    FCodeNodeType_Timing = 1;
+    FCodeNodeType_If = 2;
+    FCodeNodeType_Expression = 3;
+    FCodeNodeType_Function = 4;
+    FCodeNodeType_Condition = 5;
+    FCodeNodeType_Command = 6;
+    FCodeNodeType_End = 7;
+    FCodeNodeType_Foreach = 8;
+    FCodeNodeType_Vars = 9;
+}
+
+message FCodeConfig {
+    string id                = 1 ;
+    string logicId           = 2; // FCodeLogic主键
+
+    string actorType        = 4; // 角色类型， 例如self 或 target
+    string attrType         = 5; // 属性类型 参考common.proto attrType
+    string compareOpt       = 6; // 比较符
+    float compareVal     = 7; // 比较值
+    float damage         = 8; // 伤害
+    float probability    = 9; // 概率
+    float coefficient    = 10; // 伤害系数
+    string fieldName        = 11; // 字段名
+    // uint32   skillId        = 12; // 技能id
+    float dodgeBeginNorm     = 13; // dodge动作有效触发开始(0~1)
+    float dodgeEndNorm       = 14; // dodge动作有效触发结束(0~1)
+    int32   buffId              = 15; // BuffData.xlsx id
+    int32   externalBulletId        = 32;   // ExternalBullet.xlsx id
+    float   speedChangeX        = 16; // X方向直接速度变化
+    float   speedChangeY        = 17; // Y方向直接速度变化
+    float        value           = 18; // 通用来 表示 值
+    string targetActorType          = 19;    // 目标角色类型， 例如self 或 target
+    float  transformTime         = 20;   // 执行不同逻辑的中间时间
+    string attrType1         = 21; // 属性类型1 参考common.proto attrType
+    string action                 = 22;   // 动作名称
+    string dictName                 = 23;   // 外部表名称
+    string dictIndex                 = 24;   // 外部表附加索引
+    float interval                 = 25;   // 时间间隔
+    float mpRecoverRate                 = 26;   // MP回复
+    float threshold                 = 27;   // 阈值
+    float timePoint                 = 28;   // 时间点
+    float timePoint1                 = 29;   // 时间点1
+    float duration                 = 30;   // 持续时间
+    float ratio                      = 31;   // 比例值
+}
+
+
+enum FCodeTiming {
+    FCodeTiming_None            = 0;
+    FCodeTiming_CauseDamage     = 1;
+    FCodeTiming_DropEnd         = 2;
+    FCodeTiming_Dodge           = 3;
+    FCodeTiming_UseSkill        = 4;
+    FCodeTiming_AddBuff         = 5;
+    FCodeTiming_UpdateBuff      = 6;
+    FCodeTiming_CauseDamageEnd  = 7;
+    FCodeTiming_StackChangeBuff = 8;
+    FCodeTiming_SufferDamage    = 9;
+    FCodeTiming_RemoveBuff      = 10;
+    FCodeTiming_SufferDamageEnd = 11;
+    FCodeTiming_AttackEventEnd = 12;
+    FCodeTiming_DamageEvnetFinished = 14;
+    FCodeTiming_AffixEffect     = 15;
+    FCodeTiming_ActionChanged     = 16;
+    FCodeTiming_UpdateScaled     = 17;
+    FCodeTiming_ChangeHp     = 18;
+    FCodeTiming_ProcessDead     = 19;
+    FCodeTiming_ActionEnd       = 20;
+    FCodeTiming_StartBullet       = 21;
+    FCodeTiming_Kill        = 22;
+    FCodeTiming_ChangeSp        = 23;
+}

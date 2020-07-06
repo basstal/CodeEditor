@@ -1,0 +1,16 @@
+{
+  "LogicDir" : "Assets/FCode/",
+  "FCodeProto" : [
+    "Assets/Editor/Proto/FCode.proto"
+  ],
+  "FCodeExt" : "bytes",
+  "FCodeSignature" :
+  {
+    "SingleLogicStart" : "FCodeSignature:SingleLogic:Start",
+    "SingleLogicEnd":"FCodeSignature:SingleLogic:End",
+    "VarsStart":"FCodeSignature:Vars:Start",
+    "VarsEnd":"FCodeSignature:Vars:End"
+  },
+  "FCodeFunctionPrefix" : "fc_",
+  "FCodeFunctionFile" : "Assets/FCode/FCLogic.bytes"
+}
