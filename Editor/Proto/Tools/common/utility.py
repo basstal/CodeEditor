@@ -1066,21 +1066,21 @@ def readable(size):
     return '{:.2f} {}'.format(size, unit[index])
 
 
-def deploy(src_path, dst_path, files, remove_diff=True):
-    info('deploy begin: %s => %s, %s files'%(src_path,dst_path,len(files)) )
-    synced_files = sync_folder(src_path, dst_path, src_files=files, remove_diff=remove_diff)
-    total_size = sum([file_size(file) for file in synced_files])
-    info('Deployed {} files, total size: {}({})'.format(len(synced_files), readable(total_size), total_size))
+# def deploy(src_path, dst_path, files, remove_diff=True):
+#     info('deploy begin: %s => %s, %s files'%(src_path,dst_path,len(files)) )
+#     synced_files = sync_folder(src_path, dst_path, src_files=files, remove_diff=remove_diff)
+#     total_size = sum([file_size(file) for file in synced_files])
+#     info('Deployed {} files, total size: {}({})'.format(len(synced_files), readable(total_size), total_size))
 
-    with open(join_path(dst_path, '.meta'), 'w+') as meta_output:
-        import json
+#     with open(join_path(dst_path, '.meta'), 'w+') as meta_output:
+#         import json
 
-        dict = {}
+#         dict = {}
 
-        for key in os.environ:
-            dict[key] = os.environ[key]
+#         for key in os.environ:
+#             dict[key] = os.environ[key]
 
-        meta_output.write(json.dumps(dict, sort_keys=True, indent=4))
+#         meta_output.write(json.dumps(dict, sort_keys=True, indent=4))
 
 
 def pool_function(args):
