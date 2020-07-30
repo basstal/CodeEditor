@@ -166,7 +166,14 @@ namespace CodeEditor
                     }
                     if (fcodeFunction.name != fcodeFunction.shortName)
                     {
-                        fcodeFunctions.Add(fcodeFunction.shortName, fcodeFunction);
+                        if (string.IsNullOrEmpty(fcodeFunction.shortName))
+                        {
+                            Debug.LogWarning($"fcodeFunction : {fcodeFunction} have no name!");
+                        }
+                        else
+                        {
+                            fcodeFunctions.Add(fcodeFunction.shortName, fcodeFunction);
+                        }
                     }
                 }
 
