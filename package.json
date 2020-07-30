@@ -4,9 +4,7 @@
   "displayName": "CodeEditor",
   "description": "see README.md",
   "unity": "2019.1",
-  "dependencies": {
-    "jillejr.newtonsoft.json-for-unity": "12.0.201"
-  },
+  "dependencies": {},
   "author": {
     "name": "basstal",
     "email": "330475004@qq.com",
