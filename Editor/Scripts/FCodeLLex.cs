@@ -195,6 +195,10 @@ namespace CodeEditor
             {
                 tokenType = vInt;
             }
+            else if (value is TK)
+            {
+                tokenType = (int)value;
+            }
             else
             {
                 throw new InvalidCastException($"Can not cast {value} to TypedToken!");

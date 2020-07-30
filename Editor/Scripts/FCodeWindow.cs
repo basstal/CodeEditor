@@ -1,3 +1,4 @@
+#define ACT91
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -243,6 +244,10 @@ namespace CodeEditor
                 };
                 m_fileList.onSelectCallback += list => {
                     var focusFile = (string)list.list[list.index];
+                    if (m_fcodeTreeView != null && focusFile == m_fcodeTreeView.name)
+                    {
+                        return;
+                    }
                     if (FocusChangedConfirm() && File.Exists(focusFile))
                     {
                         var content = File.ReadAllText(focusFile);

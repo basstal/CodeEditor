@@ -645,6 +645,25 @@ namespace CodeEditor
                         {
                             switch (parameterTypeRef)
                             {
+                                case "Boolean":
+                                    TypedToken boolToken = null;
+                                    if (parameterConfig.fields != null)
+                                    {
+                                        boolToken = (TypedToken)parameterConfig.fields[0];
+                                    }
+                                    else
+                                    {
+                                        boolToken = new TypedToken(TK.FALSE); 
+                                    }
+
+                                    var flag = boolToken.tokenType == (int) TK.TRUE;
+                                    var nFlag = GUILayout.Toggle(flag, paramName);
+                                    if (nFlag != flag)
+                                    {
+                                        parameterConfig.fields = parameterConfig.fields??new List<Token>() { boolToken };
+                                        parameterConfig.fields[0].SetOriginal(nFlag?TK.TRUE :TK.FALSE);
+                                    }
+                                    break;
                                 case "Literal":
                                 case "Nil":
                                 case "String":

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define ACT91
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -163,7 +164,7 @@ namespace CodeEditor
                             var comment = match.Groups[1].Value;
                             var fieldName = isMessageOrEnum ? "" : spaceSplit[spaceSplit.Length - 1];
                             var fullName = isMessageOrEnum ? classType : string.Format("{0}.{1}", classType, fieldName);
-                            m_explanations.Add(fullName, comment);
+                            m_explanations[fullName] = comment;
                         }
                     }
                     if (line.Contains("}"))
@@ -374,6 +375,10 @@ namespace CodeEditor
                 };
                 m_fileList.onSelectCallback += list => {
                     var focusFile = (string)list.list[list.index];
+                    if (m_bevTreeView != null && focusFile == m_bevTreeView.name)
+                    {
+                        return;
+                    }
                     if (FocusChangedConfirm() && File.Exists(focusFile))
                     {
 #if ACT91
@@ -386,7 +391,7 @@ namespace CodeEditor
                         m_bevTreeView.Reload();
                         m_bevTreeView.SetExpandedRecursive(-1, true);
                     }
-                    else
+                    else if (m_bevTreeView != null)
                     {
                         list.index = list.list.IndexOf(m_bevTreeView.name);
                     }

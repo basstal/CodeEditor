@@ -8,12 +8,13 @@
     "Condition":[],
     "Action":[]
   },
-  "ConditionsDir" : "Assets/Conditions/",
-  "ActionsDir" : "Assets/Actions/",
+  "ConditionsDir" : "Assets/AssetBundle/Data/Lua/Logic/BevTree/Conditions/",
+  "ActionsDir" : "Assets/AssetBundle/Data/Lua/Logic/BevTree/Actions/",
   "BevTreeProto" : [
+    "Assets/NOAHExtension/Proto/Editor/Proto/Client/code.proto",
     "Assets/NOAH/Modules/CodeEditor/Editor/Proto/BevTree.proto"
   ],
-  "AIDir" : "Assets/AI/",
-  "AISnippetDir" : "Assets/AI/Snippet/",
+  "AIDir" : "Assets/AssetBundle/Data/Lua/AI/",
+  "AISnippetDir" : "Assets/AssetBundle/Data/Lua/AI/Snippet/",
   "AIExt" : "bytes"
 }

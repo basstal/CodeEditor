@@ -1,6 +1,7 @@
 {
-  "LogicDir" : "Assets/FCode/",
+  "LogicDir" : "Assets/AssetBundle/Data/Lua/FCode/",
   "FCodeProto" : [
+    "Assets/NOAHExtension/Proto/Editor/Proto/Client/code.proto",
     "Assets/Editor/Proto/FCode.proto"
   ],
   "FCodeExt" : "bytes",
@@ -12,5 +13,5 @@
     "VarsEnd":"FCodeSignature:Vars:End"
   },
   "FCodeFunctionPrefix" : "fc_",
-  "FCodeFunctionFile" : "Assets/FCode/FCLogic.bytes"
+  "FCodeFunctionFile" : "Assets/AssetBundle/Data/Lua/Logic/FCode/FCLogic.bytes"
 }
