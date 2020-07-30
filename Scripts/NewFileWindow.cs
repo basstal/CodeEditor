@@ -1,3 +1,4 @@
+#define ACT91
 using System;
 using System.IO;
 using System.Net;
@@ -107,7 +108,11 @@ namespace CodeEditor
                         if (m_option == NewFileOption.BevTree)
                         {
                             var data = new CodeNode() {Name = fileNameWithoutExtension, Type = "BevTree", BevTree = new BevTreeRoot(), NodeType = BevNodeType.None};
+#if ACT91
+                            BevTreeExtension.WriteCodeNode(newFilePath, data);
+#else
                             File.WriteAllBytes(newFilePath, data.ToByteArray());
+#endif
                         }
                         else if (m_option == NewFileOption.FCode)
                         {
