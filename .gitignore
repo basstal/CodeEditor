@@ -16,7 +16,6 @@
 *.app
 *.VC.*
 .DS_Store
-*~
 *.swp
 
 .vs/
@@ -25,6 +24,4 @@ build/*
 *.pyc
 /Logs
 
-**/*.meta
-**/Extensions/
 **/Proto/Generated/

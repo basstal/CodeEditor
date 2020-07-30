@@ -1,0 +1,19 @@
+{
+  "insertion":
+  {
+    "BevTree": ["Selector", "Sequence", "RandomSelector"],
+    "Selector":["Selector", "Sequence", "Condition", "Action", "RandomSelector"],
+    "RandomSelector": ["Selector", "Sequence", "RandomSelector"],
+    "Sequence":["Selector", "Sequence", "Condition", "Action", "RandomSelector"],
+    "Condition":[],
+    "Action":[]
+  },
+  "ConditionsDir" : "Assets/Conditions/",
+  "ActionsDir" : "Assets/Actions/",
+  "BevTreeProto" : [
+    "Assets/NOAH/Modules/CodeEditor/Editor/Proto/BevTree.proto"
+  ],
+  "AIDir" : "Assets/AI/",
+  "AISnippetDir" : "Assets/AI/Snippet/",
+  "AIExt" : "bytes"
+}
