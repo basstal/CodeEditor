@@ -43,6 +43,7 @@ namespace CodeEditor
             get => m_fcodeConfig;
         }
         public Dictionary<string, Texture2D>  icons => m_icons;
+        public List<CodeEditorTreeViewItem> savedCopyItems { get; set; }
         public JToken fcodeProperties { get => m_fcodeProperties; }
 #if ACT91
         [MenuItem("⛵NOAH/Window/Code Editor/FCode")]

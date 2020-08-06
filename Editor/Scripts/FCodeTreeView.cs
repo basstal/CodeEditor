@@ -23,7 +23,10 @@ namespace CodeEditor
         {
             m_fcodeLogic = logic;
             this.name = name;
-
+            if (FCodeWindow.instance.savedCopyItems != null)
+            {
+                copyItems = FCodeWindow.instance.savedCopyItems;
+            }
         }
 
         public FCodeTreeView(TreeViewState state, MultiColumnHeader multiColumnHeader) : base(state, multiColumnHeader)
@@ -325,6 +328,12 @@ namespace CodeEditor
             menu.AddSeparator("");
 
             menu.ShowAsContext();
+        }
+
+        public override void Copy()
+        {
+            base.Copy();
+            FCodeWindow.instance.savedCopyItems = copyItems;
         }
     }
 }

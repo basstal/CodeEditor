@@ -531,22 +531,33 @@ namespace CodeEditor
                 expression.Append(' ');
             }
         }
+
+        private FCodeTreeViewItem BuildRecursive(FCodeTreeViewItem root)
+        {
+            FCodeTreeViewItem copyRoot = (FCodeTreeViewItem)Build(root.data);
+            if (root.children != null)
+            {
+                foreach (FCodeTreeViewItem child in root.children)
+                {
+                    var copyChild = BuildRecursive(child);
+                    copyRoot.AddChild(copyChild);
+                }
+            }
+            return copyRoot;
+        }
+        
         public override CodeEditorTreeViewItem Clone()
         {
             if (fcodeNodeType == FCodeNodeType.Timing || fcodeNodeType == FCodeNodeType.Vars)
             {
                 return Build(data);
             }
+            else if (fcodeNodeType == FCodeNodeType.If || fcodeNodeType == FCodeNodeType.Foreach)
+            {
+                return BuildRecursive(this);
+            }
             else
             {
-                // ** todo 递归build所有children的data并且组织成一个新的treeViewItem
-                // var c = Build(data);
-                // Traverse(item =>
-                // {
-                //     var data = ((FCodeTreeViewItem) item).data;
-                //     var child = Build(data, depth - item.depth);
-                //     
-                // });
                 return Build(data);
             }
         }
